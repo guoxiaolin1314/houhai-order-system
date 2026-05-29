@@ -13283,7 +13283,7 @@ function loadAuditLog() {
 let _navBusy = false;
 
 // 页面加载时读取hash路由
-function initRouter() {
+async function initRouter() {
   // 鉴权初始化
   if (!Auth.checkAuth()) return;
   // 检测是否通过 file:// 打开
@@ -13297,7 +13297,7 @@ function initRouter() {
     if (user.is_admin) document.getElementById('userDisplayName').textContent += ' 👑';
   }
   filterNavByPermission();
-  DB.pullFromServer();  // 登录后从服务器拉取业务数据
+  await DB.pullFromServer();  // ⭐ 等待服务器数据加载完再渲染页面
   const hash = window.location.hash.replace('#', '') || 'dashboard';
   navigate(hash);
 }
