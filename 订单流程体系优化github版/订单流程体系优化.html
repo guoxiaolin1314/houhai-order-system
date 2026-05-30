@@ -870,21 +870,18 @@ textarea.form-control {
 <div class="sidebar-header"><h1>📋 订单体系</h1><div class="subtitle">厚海锐膜 · v2.0</div></div>
 <nav class="sidebar-nav" id="mainNav">
 <a class="nav-item active" data-page="dashboard" href="#dashboard"><span class="nav-icon">📊</span><span>数据看板</span></a>
-<div style="padding:8px 20px;font-size:11px;color:var(--gray-400);border-top:1px solid var(--gray-100);margin-top:4px;">�?�?�?�?/div>
-<a class="nav-item" data-page="quotation-engine" href="#quotation-engine"><span class="nav-icon">🧮</span><span>报价引擎</span></a>
+<div style="padding:8px 20px;font-size:11px;color:var(--gray-400);border-top:1px solid var(--gray-100);margin-top:4px;">系 统 管 理<a class="nav-item" data-page="quotation-engine" href="#quotation-engine"><span class="nav-icon">🧮</span><span>报价引擎</span></a>
 <a class="nav-item" data-page="quote-doc" href="#quote-doc"><span class="nav-icon">📄</span><span>报价单生�?/span></a>
 <a class="nav-item" data-page="contract" href="#contract"><span class="nav-icon">📝</span><span>合同生成</span></a>
 <a class="nav-item" data-page="schedule" href="#schedule"><span class="nav-icon">📅</span><span>排产计算</span></a>
 <a class="nav-item" data-page="production-tracking" href="#production-tracking"><span class="nav-icon">🏭</span><span>生产跟踪</span></a>
 <a class="nav-item" data-page="customer" href="#customer"><span class="nav-icon">👥</span><span>客户档案</span><span class="badge" id="customerBadge">0</span></a>
-<div style="padding:8px 20px;font-size:11px;color:var(--gray-400);border-top:1px solid var(--gray-100);margin-top:4px;">�?础 �?�?/div>
-<a class="nav-item" data-page="supplier" href="#supplier"><span class="nav-icon">🏢</span><span>供方信息</span></a>
+<div style="padding:8px 20px;font-size:11px;color:var(--gray-400);border-top:1px solid var(--gray-100);margin-top:4px;">核 心 模 块<a class="nav-item" data-page="supplier" href="#supplier"><span class="nav-icon">🏢</span><span>供方信息</span></a>
 <a class="nav-item" data-page="material" href="#material"><span class="nav-icon">🧵</span><span>基材管理</span></a>
 <a class="nav-item" data-page="formula" href="#formula"><span class="nav-icon">🧪</span><span>配方管理</span></a>
 <a class="nav-item" data-page="shape" href="#shape"><span class="nav-icon">✂️</span><span>模切形状</span></a>
 <a class="nav-item" data-page="formula-calc" href="#formula-calc"><span class="nav-icon">🔬</span><span>配方计算</span></a>
-<div style="padding:8px 20px;font-size:11px;color:var(--gray-400);border-top:1px solid var(--gray-100);margin-top:4px;">�?�?�?�?/div>
-<a class="nav-item" data-page="user-manager" href="#user-manager"><span class="nav-icon">👤</span><span>用户管理</span></a>
+<div style="padding:8px 20px;font-size:11px;color:var(--gray-400);border-top:1px solid var(--gray-100);margin-top:4px;">基 础 数 据<a class="nav-item" data-page="user-manager" href="#user-manager"><span class="nav-icon">👤</span><span>用户管理</span></a>
 <a class="nav-item" data-page="audit-log" href="#audit-log"><span class="nav-icon">📋</span><span>操作日志</span></a>
 </nav>
 <div class="sidebar-footer" id="sidebarUserInfo">
@@ -5984,7 +5981,8 @@ const Auth = (function() {
 
 /* ===== app.js ===== */
 /* ===== 鉴权模块 ===== */
-// Auth已在前面定义，跳过
+// Auth 由 auth.js 定义
+// const Auth = {
   getUser() { try { return JSON.parse(localStorage.getItem('order_flow_user') || 'null'); } catch { return null; } },
   getRoleName() { const u = this.getUser(); return u ? u.role_name : ''; },
   getToken() { return localStorage.getItem('order_flow_token') || ''; },
